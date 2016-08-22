@@ -70,6 +70,6 @@ class RegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
-      params.require(:registration).permit(:street, :city, :state, :zip, :phone, :donation, :xs_shirts, :s_shirts, :m_shirts, :l_shirts, :xl_shirts, :participants_attributes => [:name, :age, :shirt, :level, :volunteer])
+      params.require(:registration).permit(:street, :city, :state, :zip, :phone, :donation, :xs_shirts, :s_shirts, :m_shirts, :l_shirts, :xl_shirts, :participants_attributes => [:id, :name, :age, :shirt, :level, :volunteer])
     end
 end

@@ -11,24 +11,29 @@
     </div>
   <% end %>
 
+<div id='participants'>
   <%= f.fields_for :participants do |ff| %>
+    <div id='participant_<%= ff.index %>'>
+      <%= ff.label :name %>
+      <%= ff.text_field :name %>
 
-    <%= ff.label :name %>
-    <%= ff.text_field :name %>
+      <%= ff.label :age %>
+      <%= ff.number_field :age %>
 
-    <%= ff.label :age %>
-    <%= ff.number_field :age %>
+      <%= ff.label :shirt %>
+      <%= ff.collection_select :shirt, shirt_sizes, :last, :first, {prompt: 'Select a Size'} %>
 
-    <%= ff.label :shirt %>
-    <%= ff.collection_select :shirt, shirt_sizes, :last, :first, {prompt: 'Select a Size'} %>
+      <%= ff.label :level %>
+      <%= ff.collection_select :level, registration_levels, :last, :first, {prompt: 'Select a Registration'} %>
 
-    <%= ff.label :level %>
-    <%= ff.collection_select :level, registration_levels, :last, :first, {prompt: 'Select a Registration'} %>
-
-    <%= ff.label :volunteer %>
-    <%= ff.check_box :volunteer %>
-    
+      <%= ff.label :volunteer %>
+      <%= ff.check_box :volunteer %>
+    </div>
   <% end %>
+</div>
+
+  <%= link_to 'Add Participant', '#', id: 'add_participant' %>
+
 
   <div class="field">
     <%= f.label :street %><br>

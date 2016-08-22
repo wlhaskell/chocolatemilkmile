@@ -18,4 +18,10 @@ module RegistrationsHelper
       'X-Large' => 4
     }
 	end
+
+	def link_to_add_participant(f, association, index)
+		participant = Participant.new
+		id = index + 1
+		fields = render('participant', {f:f, id: id}) 
+	end
 end

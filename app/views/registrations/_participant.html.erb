@@ -1,0 +1,18 @@
+<%= f.fields_for :participants do |ff| %>
+
+    <%= ff.label :name %>
+    <%= ff.text_field :name %>
+
+    <%= ff.label :age %>
+    <%= ff.number_field :age %>
+
+    <%= ff.label :shirt %>
+    <%= ff.collection_select :shirt, shirt_sizes, :last, :first, {prompt: 'Select a Size'} %>
+
+    <%= ff.label :level %>
+    <%= ff.collection_select :level, registration_levels, :last, :first, {prompt: 'Select a Registration'} %>
+
+    <%= ff.label :volunteer %>
+    <%= ff.check_box :volunteer %>
+
+<% end %>
