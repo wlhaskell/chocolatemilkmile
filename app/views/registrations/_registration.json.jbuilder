@@ -1,0 +1,2 @@
+json.extract! registration, :id, :street, :city, :state, :zip, :phone, :donation, :xs_shirts, :s_shirts, :m_shirts, :l_shirts, :xl_shirts, :created_at, :updated_at
+json.url registration_url(registration, format: :json)

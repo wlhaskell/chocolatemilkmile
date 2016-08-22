@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @registration.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @registration.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @registration.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @registration.zip %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @registration.phone %>
+</p>
+
+<p>
+  <strong>Donation:</strong>
+  <%= @registration.donation %>
+</p>
+
+<p>
+  <strong>Xs shirts:</strong>
+  <%= @registration.xs_shirts %>
+</p>
+
+<p>
+  <strong>S shirts:</strong>
+  <%= @registration.s_shirts %>
+</p>
+
+<p>
+  <strong>M shirts:</strong>
+  <%= @registration.m_shirts %>
+</p>
+
+<p>
+  <strong>L shirts:</strong>
+  <%= @registration.l_shirts %>
+</p>
+
+<p>
+  <strong>Xl shirts:</strong>
+  <%= @registration.xl_shirts %>
+</p>
+
+<%= link_to 'Edit', edit_registration_path(@registration) %> |
+<%= link_to 'Back', registrations_path %>

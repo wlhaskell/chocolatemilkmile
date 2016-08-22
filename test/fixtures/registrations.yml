@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone: MyString
+  donation: 1
+  xs_shirts: 1
+  s_shirts: 1
+  m_shirts: 1
+  l_shirts: 1
+  xl_shirts: 1
+
+two:
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone: MyString
+  donation: 1
+  xs_shirts: 1
+  s_shirts: 1
+  m_shirts: 1
+  l_shirts: 1
+  xl_shirts: 1
