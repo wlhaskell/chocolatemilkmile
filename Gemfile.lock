@@ -45,6 +45,8 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    bulma-rails (0.0.28)
+      sass (~> 3.2)
     byebug (9.0.5)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -165,6 +167,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bulma-rails (~> 0.0.28)
   byebug
   coffee-rails (~> 4.1.0)
   devise

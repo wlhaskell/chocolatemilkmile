@@ -11,75 +11,98 @@
     </div>
   <% end %>
 
-<div id='participants'>
-  <%= f.fields_for :participants do |ff| %>
-    <div id='participant_<%= ff.index %>'>
-      <%= ff.label :name %>
-      <%= ff.text_field :name %>
+  <div id='participants'>
+    <%= f.fields_for :participants do |ff| %>
+      <div id='participant_<%= ff.index %>'>
+        <hr>
+        <div class='control'>
+          <%= ff.label :name, class: 'label' %>
+          <%= ff.text_field :name, class: 'input' %>
+        </div>
+        <div class='control'>      
+          <%= ff.label :shirt, class: 'label' %>
+          <span class='select'>
+          <%= ff.collection_select :shirt, shirt_sizes, :last, :first, {prompt: 'Select a Size'} %>
+          </span>
+        </div>
+        <div class='control'>    
+          <%= ff.label :level, class: 'label' %>
+          <span class='select'>
+          <%= ff.collection_select :level, registration_levels, :last, :first, {prompt: 'Select a Registration'} %>
+          </span>
+        </div>
+        <div class='control'>
+          <%= ff.label :volunteer, class: 'checkbox' %>
+          <%= ff.check_box :volunteer, class: 'checkbox' %>
+          <button type='button' class='remove_participant button is-danger is-smaller is-outlined is-pulled-right'>
+            <i class='fa fa-times-circle-o'>
+            </i>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <button type='button' id='add_participant' class='button is-primary is-pulled-center'>
+    Add Another Participant
+  </button>
+  <hr>
 
-      <%= ff.label :age %>
-      <%= ff.number_field :age %>
 
-      <%= ff.label :shirt %>
-      <%= ff.collection_select :shirt, shirt_sizes, :last, :first, {prompt: 'Select a Size'} %>
+  <%= f.label 'Address', class: 'label' %>
+  <div class="control">
+    <%= f.text_field :street, class: 'input', placeholder: 'Street Address' %>
+  </div>
+  <div class="control is-horizontal">
+    <%= f.text_field :city, class: 'input', placeholder: 'City' %>
+    <%= f.text_field :state, class: 'input', placeholder: 'State' %>
+    <%= f.text_field :zip, class: 'input', placeholder: 'Zip' %>
+  </div>
+  <%= f.label :phone, class: 'label' %>
+  <div class="control">
+    <%= f.text_field :phone, class: 'input' %>
+  </div>
+  <p class='label'>Additional Donation</p>
+  <div class="control has-icon">
+    <%= f.number_field :donation, class: 'input' %>
+    <i class='fa fa-usd'></i>
+  </div>
 
-      <%= ff.label :level %>
-      <%= ff.collection_select :level, registration_levels, :last, :first, {prompt: 'Select a Registration'} %>
+  <hr>
+  
+  <div id='shirt_buttons' class='control'>
+    <button type='button' id='additional_shirts' class='button is-primary'>Order Additional T-Shrits</button>
+    <button type='button' id='hide_shirts' class='button is-primary is-outlined' style='opacity:0'>Hide</button>
+  </div>
 
-      <%= ff.label :volunteer %>
-      <%= ff.check_box :volunteer %>
+  <div id='shirt_order', style='display:none'>
+
+    <div class="control has-addons">
+      <%= f.label 'XS', class: 'button is-primary' %>
+      <%= f.number_field :xs_shirts, class: 'input is-expanded', value: 0 %>
     </div>
-  <% end %>
-</div>
+    <div class="control has-addons">
+      <%= f.label 'Sm', class: 'button is-primary' %>
+      <%= f.number_field :s_shirts, class: 'input is-expanded', value: 0 %>
+    </div>
+    <div class="control has-addons">
+      <%= f.label 'Md', class: 'button is-primary' %>
+      <%= f.number_field :m_shirts, class: 'input is-expanded', value: 0 %>
+    </div>
+     <div class="control has-addons">
+      <%= f.label 'Lg', class: 'button is-primary' %>
+      <%= f.number_field :l_shirts, class: 'input is-expanded', value: 0 %>
+    </div>
+    <div class="control has-addons">
+      <%= f.label 'XL', class: 'button is-primary' %>
+      <%= f.number_field :xl_shirts, class: 'input is-expanded', value: 0 %>
+    </div>
+  </div>
 
-  <%= link_to 'Add Participant', '#', id: 'add_participant' %>
+  <hr>
 
-
-  <div class="field">
-    <%= f.label :street %><br>
-    <%= f.text_field :street %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :donation %><br>
-    <%= f.number_field :donation %>
-  </div>
-  <div class="field">
-    <%= f.label :xs_shirts %><br>
-    <%= f.number_field :xs_shirts %>
-  </div>
-  <div class="field">
-    <%= f.label :s_shirts %><br>
-    <%= f.number_field :s_shirts %>
-  </div>
-  <div class="field">
-    <%= f.label :m_shirts %><br>
-    <%= f.number_field :m_shirts %>
-  </div>
-  <div class="field">
-    <%= f.label :l_shirts %><br>
-    <%= f.number_field :l_shirts %>
-  </div>
-  <div class="field">
-    <%= f.label :xl_shirts %><br>
-    <%= f.number_field :xl_shirts %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button is-primary' %>
   </div>
+
 <% end %>

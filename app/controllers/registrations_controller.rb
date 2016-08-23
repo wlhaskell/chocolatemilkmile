@@ -1,6 +1,8 @@
 class RegistrationsController < ApplicationController
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
 
+  def home
+  end
   # GET /registrations
   # GET /registrations.json
   def index

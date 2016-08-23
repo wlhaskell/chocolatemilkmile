@@ -1,18 +1,23 @@
 <%= f.fields_for :participants do |ff| %>
 
-    <%= ff.label :name %>
-    <%= ff.text_field :name %>
+    <div class='control is-horiztonal'>
+        <%= ff.label :name, class: 'label' %>
+        <%= ff.text_field :name, class: 'input' %>
 
-    <%= ff.label :age %>
-    <%= ff.number_field :age %>
+        <%= ff.label :age, class: 'label' %>
+        <%= ff.number_field :age, class:'input' %>
 
-    <%= ff.label :shirt %>
-    <%= ff.collection_select :shirt, shirt_sizes, :last, :first, {prompt: 'Select a Size'} %>
+        <%= ff.label :shirt, class: 'label' %>
+        <span class='select'>
+        <%= ff.collection_select :shirt, shirt_sizes, :last, :first, {prompt: 'Select a Size'} %>
+        </span>
 
-    <%= ff.label :level %>
-    <%= ff.collection_select :level, registration_levels, :last, :first, {prompt: 'Select a Registration'} %>
+        <%= ff.label :level, class: 'label' %>
+        <span class='select'>
+        <%= ff.collection_select :level, registration_levels, :last, :first, {prompt: 'Select a Registration'} %>
+        </span>
 
-    <%= ff.label :volunteer %>
-    <%= ff.check_box :volunteer %>
-
+        <%= ff.label :volunteer, class: 'checkbox' %>
+        <%= ff.check_box :volunteer, class: 'checkbox' %>
+    </div>
 <% end %>
