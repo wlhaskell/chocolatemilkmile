@@ -1,0 +1,22 @@
+<p><%= @registration.participants.length %> Participants:</p>
+<ul>
+<% @registration.participants.each do |participant| %>
+	<li><%= participant.name %>, <%= registration_levels.key(participant.level) %>
+		<% if participant.level != 0 %>
+			<%= @total += 15 %>
+		<% end %>
+<% end %>
+</ul>
+
+<p>
+	Address:<br>
+	<%= @registration.street %><br>
+	<%= @registration.city %> <%= @registration.state %> <%= @registration.zip %>
+</p>
+
+<p>
+	Registrations: $<%= @total %> <br>
+	Additional Dontation: $<%= @registration.donation %><br>
+	<% @total += @registration.donation %>
+	Total Donation: $<%= @total %>
+</p>

@@ -19,12 +19,6 @@
           <%= ff.label :name, class: 'label' %>
           <%= ff.text_field :name, class: 'input' %>
         </div>
-        <div class='control'>      
-          <%= ff.label :shirt, class: 'label' %>
-          <span class='select'>
-          <%= ff.collection_select :shirt, shirt_sizes, :last, :first, {prompt: 'Select a Size'} %>
-          </span>
-        </div>
         <div class='control'>    
           <%= ff.label :level, class: 'label' %>
           <span class='select'>
@@ -47,8 +41,6 @@
     Add Another Participant
   </button>
   <hr>
-
-
   <%= f.label 'Address', class: 'label' %>
   <div class="control">
     <%= f.text_field :street, class: 'input', placeholder: 'Street Address' %>
@@ -64,39 +56,8 @@
   </div>
   <p class='label'>Additional Donation</p>
   <div class="control has-icon">
-    <%= f.number_field :donation, class: 'input' %>
+    <%= f.number_field :donation, class: 'input', value: 0 %>
     <i class='fa fa-usd'></i>
-  </div>
-
-  <hr>
-  
-  <div id='shirt_buttons' class='control'>
-    <button type='button' id='additional_shirts' class='button is-primary'>Order Additional T-Shrits</button>
-    <button type='button' id='hide_shirts' class='button is-primary is-outlined' style='opacity:0'>Hide</button>
-  </div>
-
-  <div id='shirt_order', style='display:none'>
-
-    <div class="control has-addons">
-      <%= f.label 'XS', class: 'button is-primary' %>
-      <%= f.number_field :xs_shirts, class: 'input is-expanded', value: 0 %>
-    </div>
-    <div class="control has-addons">
-      <%= f.label 'Sm', class: 'button is-primary' %>
-      <%= f.number_field :s_shirts, class: 'input is-expanded', value: 0 %>
-    </div>
-    <div class="control has-addons">
-      <%= f.label 'Md', class: 'button is-primary' %>
-      <%= f.number_field :m_shirts, class: 'input is-expanded', value: 0 %>
-    </div>
-     <div class="control has-addons">
-      <%= f.label 'Lg', class: 'button is-primary' %>
-      <%= f.number_field :l_shirts, class: 'input is-expanded', value: 0 %>
-    </div>
-    <div class="control has-addons">
-      <%= f.label 'XL', class: 'button is-primary' %>
-      <%= f.number_field :xl_shirts, class: 'input is-expanded', value: 0 %>
-    </div>
   </div>
 
   <hr>

@@ -3,6 +3,10 @@ class RegistrationsController < ApplicationController
 
   def home
   end
+
+  def checkout
+    @registration = Registration.new(registration_params)
+  end
   # GET /registrations
   # GET /registrations.json
   def index
@@ -12,6 +16,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations/1
   # GET /registrations/1.json
   def show
+    @total = 0
   end
 
   # GET /registrations/new
