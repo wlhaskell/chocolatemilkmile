@@ -1,11 +1,29 @@
 class RegistrationsController < ApplicationController
-  before_action :set_registration, only: [:show, :edit, :update, :destroy]
+  before_action :set_registration, only: [:show, :edit, :update, :destroy, :checkout, :confirmation]
 
   def home
   end
 
+  def confimration
+  end
+
   def checkout
-    @registration = Registration.new(registration_params)
+    # Get the credit card details submitted by the form
+    token = params[:stripeToken]
+
+    # Create a charge: this will charge the user's card
+    begin
+      charge = Stripe::Charge.create(
+        :amount => params[:total], # Amount in cents
+        :currency => "usd",
+        :source => token,
+        :description => "Registration #{params[:id]}",
+        :metadata => {'registration_id' => params[:id]}
+      )
+      redirect_to confirmation_path(id: params[:id])
+    rescue Stripe::CardError => e
+      redirect_to @registration, notice: 'There was an issue with credit card payment: #{e.message} %>'
+    end
   end
   # GET /registrations
   # GET /registrations.json
@@ -16,7 +34,6 @@ class RegistrationsController < ApplicationController
   # GET /registrations/1
   # GET /registrations/1.json
   def show
-    @total = 0
   end
 
   # GET /registrations/new
@@ -33,6 +50,16 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(registration_params)
+
+    @registration.total = 0
+
+    @registration.participants.each do |participant|
+      if participant.level != 0
+        @registration.total += 15
+      end
+    end
+
+    @registration.total += @registration.donation
 
     respond_to do |format|
       if @registration.save

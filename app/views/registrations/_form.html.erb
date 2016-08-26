@@ -54,10 +54,12 @@
   <div class="control">
     <%= f.text_field :phone, class: 'input' %>
   </div>
-  <p class='label'>Additional Donation</p>
-  <div class="control has-icon">
-    <%= f.number_field :donation, class: 'input', value: 0 %>
-    <i class='fa fa-usd'></i>
+  <div class='box'>
+    <p class='label'>Additional Donation</p>
+    <div class="control has-icon">
+      <%= f.number_field :donation, class: 'input', value: 0 %>
+      <i class='fa fa-usd'></i>
+    </div>
   </div>
 
   <hr>
