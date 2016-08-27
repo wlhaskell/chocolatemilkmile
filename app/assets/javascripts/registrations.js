@@ -16,6 +16,8 @@ $(document).ready(function(){
 			var participant = $(this).parent().parent();
 			if (participant.siblings('div').length != 0 ){
 				participant.slideUp(350,function(){
+					var destory = participant.children().last();
+					participant.after(destory.val('1'));
 					participant.remove();
 				});
 			}
@@ -26,6 +28,8 @@ $(document).ready(function(){
 		var participant = $(this).parent().parent();
 		if (participant.siblings('div').length != 0 ){
 			participant.slideUp(350,function(){
+				var destory = participant.children().last();
+				participant.after(destory.val('1'));
 				participant.remove();
 			});
 		}

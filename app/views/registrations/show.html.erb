@@ -1,19 +1,21 @@
-<div class='container'>
-  <p id="notice"><%= notice %></p>
+<section class='section'>
+  <div class='container'>
+    <p id="notice"><%= notice %></p>
 
+  <h2 class='title is-2'>Registration Summary  <%= link_to 'Edit', edit_registration_path(@registration), class: 'button is-primary' %>
+</h2>
+  <hr>
   <%= render 'summary' %>
-
-  <%= link_to 'Edit', edit_registration_path(@registration), class: 'button is-primary' %>
-
- <form action="/checkout" method="POST">
-  <input type='hidden' name='total' value='<%= @registration.total*100 %>'>
-  <input type='hidden' name='id' value='<%= @registration.id %>'>
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= ENV['stripe_publishable_key']%>"
-    data-amount="<%= @registration.total*100 %>"
-    data-name="Register"
-    data-locale="auto">
-  </script>
-</form>
-</div>
+   <form action="/checkout" method="POST">
+    <input type='hidden' name='total' value='<%= calculate_total(@registration)*100 %>'>
+    <input type='hidden' name='id' value='<%= @registration.id %>'>
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= ENV['stripe_publishable_key']%>"
+      data-amount="<%= calculate_total(@registration)*100 %>"
+      data-name="Register"
+      data-locale="auto">
+    </script>
+  </form>
+  </div>
+</sectino>

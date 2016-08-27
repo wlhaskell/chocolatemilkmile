@@ -1,10 +1,14 @@
 class RegistrationsController < ApplicationController
   before_action :set_registration, only: [:show, :edit, :update, :destroy, :checkout, :confirmation]
+  before_action :validate_session, only: [:show, :edit, :update, :destroy, :checkout, :confirmation]
 
   def home
   end
 
   def confimration
+  end
+
+  def unauthorized
   end
 
   def checkout
@@ -51,18 +55,9 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(registration_params)
 
-    @registration.total = 0
-
-    @registration.participants.each do |participant|
-      if participant.level != 0
-        @registration.total += 15
-      end
-    end
-
-    @registration.total += @registration.donation
-
     respond_to do |format|
       if @registration.save
+        session[:id] = @registration.id
         format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
         format.json { render :show, status: :created, location: @registration }
       else
@@ -75,6 +70,7 @@ class RegistrationsController < ApplicationController
   # PATCH/PUT /registrations/1
   # PATCH/PUT /registrations/1.json
   def update
+
     respond_to do |format|
       if @registration.update(registration_params)
         format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
@@ -104,6 +100,12 @@ class RegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
-      params.require(:registration).permit(:street, :city, :state, :zip, :phone, :donation, :xs_shirts, :s_shirts, :m_shirts, :l_shirts, :xl_shirts, :participants_attributes => [:id, :name, :age, :shirt, :level, :volunteer])
+      params.require(:registration).permit(:street, :city, :state, :zip, :phone, :donation, :xs_shirts, :s_shirts, :m_shirts, :l_shirts, :xl_shirts, :participants_attributes => [:id, :name, :age, :shirt, :level, :volunteer, :_destroy])
+    end
+
+    def validate_session
+      if session[:id] != @registration.id
+        redirect_to unauthorized_path
+      end
     end
 end

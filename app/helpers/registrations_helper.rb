@@ -24,4 +24,14 @@ module RegistrationsHelper
 		id = index + 1
 		fields = render('participant', {f:f, id: id}) 
 	end
+
+	def calculate_total(registration)
+		total = 0
+		registration.participants.each do |participant|
+			if participant.level != 0
+				total += 15
+			end
+		end
+		total += registration.donation
+	end
 end

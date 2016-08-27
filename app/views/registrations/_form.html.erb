@@ -1,6 +1,6 @@
 <%= form_for(@registration) do |f| %>
   <% if @registration.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="notification is-danger">
       <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
 
       <ul>
@@ -33,6 +33,7 @@
             </i>
           </button>
         </div>
+        <%= ff.hidden_field :_destroy, value: '0' %>
       </div>
     <% end %>
   </div>
@@ -57,7 +58,7 @@
   <div class='box'>
     <p class='label'>Additional Donation</p>
     <div class="control has-icon">
-      <%= f.number_field :donation, class: 'input', value: 0 %>
+      <%= f.number_field :donation, class: 'input' %>
       <i class='fa fa-usd'></i>
     </div>
   </div>
