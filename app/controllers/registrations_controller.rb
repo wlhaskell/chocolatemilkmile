@@ -24,6 +24,8 @@ class RegistrationsController < ApplicationController
         :description => "Registration #{params[:id]}",
         :metadata => {'registration_id' => params[:id]}
       )
+      @registration.confirmation = true
+      @registration.save
       redirect_to confirmation_path(id: params[:id])
     rescue Stripe::CardError => e
       redirect_to @registration, notice: 'There was an issue with credit card payment: #{e.message} %>'
@@ -54,6 +56,7 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(registration_params)
+    @registration.confirmation = false
 
     respond_to do |format|
       if @registration.save
