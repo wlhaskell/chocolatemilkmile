@@ -1,0 +1,7 @@
+<h1>Admin Login</h1>
+
+<%= form_tag(check_password_path, :method=>'post') do %>
+	<%= password_field_tag :password %>
+	<%= submit_tag 'Login' %>
+<% end %>
+

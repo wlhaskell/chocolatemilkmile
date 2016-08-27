@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
   before_action :set_registration, only: [:show, :edit, :update, :destroy, :checkout, :confirmation]
   before_action :validate_session, only: [:show, :edit, :update, :destroy, :checkout, :confirmation]
+  before_action :validate_admin, only: [:index]
 
   def home
   end
@@ -109,6 +110,12 @@ class RegistrationsController < ApplicationController
     def validate_session
       if session[:id] != @registration.id
         redirect_to unauthorized_path
+      end
+    end
+
+    def validate_admin
+      if !session[:admin]
+        redirect_to login_admin_path
       end
     end
 end
