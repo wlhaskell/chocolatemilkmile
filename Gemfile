@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
 gem 'devise'
-gem "bulma-rails", "~> 0.0.28"
+gem "bulma-rails", "~> 0.1.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'

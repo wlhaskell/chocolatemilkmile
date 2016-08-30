@@ -11,10 +11,9 @@
     </div>
   <% end %>
 
-  <div id='participants'>
+  <div id='participants' class="box">
     <%= f.fields_for :participants do |ff| %>
       <div id='participant_<%= ff.index %>'>
-        <hr>
         <div class='control'>
           <%= ff.label :name, class: 'label' %>
           <%= ff.text_field :name, class: 'input' %>
@@ -26,8 +25,8 @@
           </span>
         </div>
         <div class='control'>
-          <%= ff.label :volunteer, class: 'checkbox' %>
           <%= ff.check_box :volunteer, class: 'checkbox' %>
+          <%= ff.label :volunteer, class: 'checkbox' %>
           <button type='button' class='remove_participant button is-danger is-smaller is-outlined is-pulled-right'>
             <i class='fa fa-times-circle-o'>
             </i>
@@ -38,7 +37,7 @@
     <% end %>
   </div>
   <br>
-  <button type='button' id='add_participant' class='button is-primary is-pulled-center'>
+  <button type='button' id='add_participant' class='button is-primary is-outline is-pulled-center'>
     Add Another Participant
   </button>
   <hr>
@@ -66,7 +65,7 @@
   <hr>
 
   <div class="actions">
-    <%= f.submit class: 'button is-primary' %>
+    <%= f.submit class: 'button is-success is-large' %>
   </div>
 
 <% end %>

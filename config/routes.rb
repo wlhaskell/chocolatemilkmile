@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'unauthorized' => 'registrations#unauthorized'
   get 'confirmation' => 'registrations#confirmation'
   post 'checkout' => 'registrations#checkout'
+  get 'credits' => 'registrations#credits'
   resources :registrations
   
 end

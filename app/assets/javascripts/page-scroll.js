@@ -3,6 +3,7 @@ $(document).ready(function() {
 	    $('html, body').animate({
 	        scrollTop: $("#home-section").offset().top
 	    }, 800);
+	    console.log ( '#someButton was clicked' );
 	});
 	$("#tim").click(function() {
 	    $('html, body').animate({
