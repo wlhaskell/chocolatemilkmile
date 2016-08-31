@@ -1,0 +1,253 @@
+$brown: #A87A60;
+$off-white: #F6F6EA;
+$milk: #EADFC3;
+$chocolate: #593407;
+$dark-chocolate: #361A05;
+$red: #e74c3c;
+$size-1: 86px;
+$size-6: 20px;
+$size-7: 16px;
+
+$primary: $brown;
+$primary-invert: $off-white;
+$link: $off-white;
+$family-primary: 'Baloo Paaji', cursive;
+
+.chocolate {
+	color: $chocolate;
+}
+
+.footer {
+	padding: 20px !important;
+}
+
+a:hover {
+	color: $dark-chocolate !important;
+}
+
+.hero-body.nav-padding {
+	margin-top: 20px;
+}
+
+#menu {
+	position: fixed;
+	width: 100%;
+	background: $brown;
+	z-index: 10;
+}
+
+#menu>.level-item {
+	width: 288px;
+}
+
+#mobile-menu {
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	height:100px;
+	width:100%;
+	background: $chocolate;
+	z-index: 10000;
+}
+
+#mobile-menu>.level-item.menu-img {
+	background: $dark-chocolate;
+}
+
+#glass {
+  border: 10px solid $off-white;
+  border-top: 0;
+  -webkit-border-radius: 0 0 30px 30px;
+	-moz-border-radius: 0 0 30px 30px;
+	border-radius: 0 0 30px 30px;
+  height: 300px;
+  width: 250px;
+  margin-top: 50px;
+  margin-left: 50px;
+  position: relative;
+}
+
+#straw {
+	background: $red;
+	position: absolute;
+	top: -90px;
+  left: 40px;
+  width: 20px;
+  height: 388px;
+	-ms-transform: rotate(-20deg); /* IE 9 */
+  -webkit-transform: rotate(-20deg); /* Chrome, Safari, Opera */
+  transform: rotate(-20deg);
+}
+
+#pour {
+	display: none;
+	background: $milk;
+	position: absolute;
+	top: -50px;
+	left: 50px;
+	width: 50px;
+	height: 340px;
+	-webkit-border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
+}
+
+#syrup {
+	display: none;
+	background: $chocolate;
+	position: absolute;
+	top: -50px;
+	right: 50px;
+	width: 20px;
+	height: 320px;
+	-webkit-border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
+}
+
+#milk {
+	background: $milk;
+	background-position: top right;
+	position: absolute;
+	bottom: 0px;
+	width: 230px;
+	height: 0px;
+	-webkit-border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
+}
+
+#m-glass {
+  border: 10px solid $off-white;
+  border-top: 0;
+  -webkit-border-radius: 0 0 30px 30px;
+	-moz-border-radius: 0 0 30px 30px;
+	border-radius: 0 0 30px 30px;
+  height: 150px;
+  width: 125px;
+  margin-top: 50px;
+  margin-left: 50px;
+  position: relative;
+}
+
+#m-straw {
+	background: $red;
+	position: absolute;
+	top: -90px;
+  left: 40px;
+  width: 10px;
+  height: 194px;
+	-ms-transform: rotate(-20deg); /* IE 9 */
+  -webkit-transform: rotate(-20deg); /* Chrome, Safari, Opera */
+  transform: rotate(-20deg);
+}
+
+#m-pour {
+	display: none;
+	background: $milk;
+	position: absolute;
+	top: -50px;
+	left: 50px;
+	width: 50px;
+	height: 340px;
+	-webkit-border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
+}
+
+#m-syrup {
+	display: none;
+	background: $chocolate;
+	position: absolute;
+	top: -50px;
+	right: 50px;
+	width: 20px;
+	height: 320px;
+	-webkit-border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
+}
+
+#m-milk {
+	background: $milk;
+	background-position: top right;
+	position: absolute;
+	bottom: 0px;
+	width: 230px;
+	height: 0px;
+	-webkit-border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
+}
+
+#run-section {
+	background: $brown;
+}
+
+div.body>h1 {
+	color: $chocolate;
+}
+
+div.body>h2 {
+	color: $brown;
+}
+
+div.body>p, div.body.register>form {
+	font-family: "Helvetica Neue";
+	font-size: $size-7;
+}
+
+body input, body select, body textarea {
+	font-family: "Helvetica Neue";
+	font-size: $size-7;
+}
+
+body input.button {
+	font-family: 'Baloo Paaji', cursive;
+}
+
+div.body.tim>p {
+	color: $dark-chocolate;
+}
+
+div.body.run>h2 {
+	color: $milk;
+}
+
+div.body.run>p {
+	color: $off-white;
+}
+
+a.is-branding {
+	color: #847bb9;
+}
+
+img.about-tim {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+
+img.about-run {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+h1.title.mobile-title {
+	font-size: 60px;
+}
+
+#x {
+	position: fixed;
+	top: 5px;
+	left: 5px;
+}
+
+.menu-title {
+	color: $off-white;
+	font-size: 28px;
+	padding-top: 30px;
+	padding-left: 10px;
+}
+
+
+@import "bulma"

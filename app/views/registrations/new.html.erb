@@ -1,10 +1,6 @@
-
-<header class="header">
-	
-</header>
 <section class="hero is-primary is-medium" id="home-section">
 	<div class="hero-head">
-		<div class="container-fluid">
+		<div class="container-fluid is-hidden-mobile">
 			<nav class="level" id="menu">
 			  <p class="level-item has-text-centered">
 			    <a class="link is-info" id="home">Home</a>
@@ -13,7 +9,7 @@
 			    <a class="link is-info" id="tim">About Tim</a>
 			  </p>
 			  <p class="level-item has-text-centered milkbox">
-			  	<%= image_tag 'milk-carton.png', style: 'height: 100px' %>
+			    <%= image_tag 'milk-carton.png', style: 'height: 100px' %>
 			  </p>
 			  <p class="level-item has-text-centered">
 			    <a class="link is-info" id="run">About the Run</a>
@@ -35,17 +31,20 @@
     				<div id="milk"></div>
     			</div>
     		</div>
-    		<div class="column is-half is-hidden-desktop">
-    			<div id="glass">
-    				<div id="milk-touch"></div>
-    			</div>
-    		</div>
-    		<div class="column is-5">
+    		<div class="column is-5 is-hidden-touch">
     			<h1 class="title is-1 has-text-right">
     				<div>the&nbsp;&nbsp;&nbsp;</div>
 		        <div class="chocolate">chocolate</div>
 		        <div>milk&nbsp;&nbsp;&nbsp;</div>
 		        <div>mile&nbsp;&nbsp;&nbsp;</div>
+		      </h1>
+    		</div>
+    		<div class="column is-hidden-desktop">
+    			<h1 class="title mobile-title has-text-centered">
+    				<div>&nbsp;&nbsp;&nbsp;&nbsp;the</div>
+		        <div class="chocolate">chocolate</div>
+		        <div>&nbsp;&nbsp;&nbsp;milk</div>
+		        <div>&nbsp;&nbsp;&nbsp;mile</div>
 		      </h1>
     		</div>
     	</div>
@@ -54,70 +53,106 @@
 </section>
 <section class="section" id="tim-section">
 	<div class="container">
-		<div class="body tim">
-			<h1 class="title is-2 has-text-centered">Tim</h1>
-			<hr>
+		<div class="columns">
+			<div class="column is-10 is-offset-1">
+				<div class="body tim">
+					<h1 class="title is-2 has-text-centered">Tim</h1>
+					<hr>
 
-				<p>On July 29<sup>th</sup>, 2016, Tim had a biopsy of a mass found under his breastbone after having some odd swelling and bruising in his face, neck, and chest. The biopsy results indicated that he had a "Primary Mediastinal Large B-cell Lymphoma" and would require a chemotherapy regime starting immediately. </p><br>
+						<p>On July 29<sup>th</sup>, 2016, Tim had a biopsy of a mass found under his breastbone after having some odd swelling and bruising in his face, neck, and chest. The biopsy results indicated that he had a "Primary Mediastinal Large B-cell Lymphoma" and would require a chemotherapy regime starting immediately. </p><br>
 
-				<%= image_tag "tim/family.jpg", class: 'about-tim', style: 'height: 480px' %>
+						<%= image_tag "tim/family.jpg", class: 'about-tim', style: 'height: 480px' %>
 
-				<p>Tim will have 6 rounds of chemo, each lasting 21 days. He will undergo 5-6 days of a 24-hour infusion drip each round, in which he will be in the hospital for those infusions entirely. He was admitted to the hospital for his first chemo treatment on August 10th and his last treatment will begin around Thanksgiving. </p><br>
+						<p>Tim will have 6 rounds of chemo, each lasting 21 days. He will undergo 5-6 days of a 24-hour infusion drip each round, in which he will be in the hospital for those infusions entirely. He was admitted to the hospital for his first chemo treatment on August 10th and his last treatment will begin around Thanksgiving. </p><br>
 
-				<p>Many people have asked about his prognosis. It's good! Really good! This type of lymphoma typically responds really well to treatment. His team of doctors (and our family!) have high hopes for a complete remission. </p><br>
+						<p>Many people have asked about his prognosis. It's good! Really good! This type of lymphoma typically responds really well to treatment. His team of doctors (and our family!) have high hopes for a complete remission. </p><br>
 
-				<p>Obviously this is going to be a trying time for our family, so we appreciate any and all prayers, thoughts, good luck etc you can send his way as well as to our three kids who are 3, 2, and 11 months old. Our hope is to keep their lives as normal as possible while Tim fights this battle. </p><br>
+						<p>Obviously this is going to be a trying time for our family, so we appreciate any and all prayers, thoughts, good luck etc you can send his way as well as to our three kids who are 3, 2, and 11 months old. Our hope is to keep their lives as normal as possible while Tim fights this battle. </p><br>
 
-				<p>If you know Tim at all, you know he is extremely strong-willed, motivated, hilarious, and most of all STUBBORN. He will fight this battle with everything he has! </p><br>
+						<p>If you know Tim at all, you know he is extremely strong-willed, motivated, hilarious, and most of all STUBBORN. He will fight this battle with everything he has! </p><br>
 
-				<p>We are so appreciative of all the love and support we have been given throughout the last couple weeks of this journey. We are so blessed to have the friends we do who are organizing the Chocolate Milk Mile Run for Tim. Without you all, we would not be #teamgaulrapp strong!</p><br>
+						<p>We are so appreciative of all the love and support we have been given throughout the last couple weeks of this journey. We are so blessed to have the friends we do who are organizing the Chocolate Milk Mile Run for Tim. Without you all, we would not be #teamgaulrapp strong!</p><br>
 
-				<p>
-					Love Always,<br>
-					Morgan Gaulrapp<br>
-					Tim's Wife
-				</p><br>
+						<p>
+							Love Always,<br>
+							Morgan Gaulrapp<br>
+							Tim's Wife
+						</p><br>
 
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 <section class="section" id="run-section">
 	<div class="container">
-		<div class="body run">
-			<h1 class="title is-2 has-text-centered">About the Run</h1>
-			<hr>
-			<h2 class="subtitle is-3">Date: Sunday September 18<sup>th</sup></h2>
-			<h2 class="subtitle is-3">Time: 1 PM</h2>
-			<h2 class="subtitle is-3">Location: Track TBD in Syracuse</h2>
-			<h2 class="subtitle is-3">Registration Levels:</h2>
-			<h2 class="subtitle is-5">Timmy's Trailbalzers: Run Laps, Guzzle Milk ($15)</h2>
-			<h2 class="subtitle is-5">Timmy's Triers: Run Laps, save your stomach ($15)</h2>
-			<h2 class="subtitle is-5">Timmy's Toddlers: Walk Laps ($15)</h2>
-			<h2 class="subtitle is-5">Timmy's Tribe: Donation of any amount.  For those who cannot be there or won't participate ($0)</h2>
-			<h2 class="subtitle is-3">Team Gaulrapp T-Shirts</h2>
-			<h2 class="subtitle is-5">Registration does not include a Team Gaulrapp T-Shirt.  If you would like to order one, <a href="https://www.customink.com/g/rvv0-00aq-36yt" target="_blank">click here</a></h2>
-		</div>
+		<div class="columns">
+			<div class="column is-10 is-offset-1">
+				<div class="body run">
+					<h1 class="title is-2 has-text-centered">About the Run</h1>
+					<hr>
+					<h2 class="subtitle is-3">Date: Sunday September 18<sup>th</sup></h2>
+					<h2 class="subtitle is-3">Time: 1 PM</h2>
+					<h2 class="subtitle is-3">Location: Track TBD in Syracuse</h2>
+					<h2 class="subtitle is-3">Registration Levels:</h2>
+					<h2 class="subtitle is-5">Timmy's Trailbalzers: Run Laps, Guzzle Milk ($15)</h2>
+					<h2 class="subtitle is-5">Timmy's Triers: Run Laps, save your stomach ($15)</h2>
+					<h2 class="subtitle is-5">Timmy's Toddlers: Walk Laps ($15)</h2>
+					<h2 class="subtitle is-5">Timmy's Tribe: Donation of any amount.  For those who cannot be there or won't participate ($0)</h2>
+					<h2 class="subtitle is-3">Team Gaulrapp T-Shirts</h2>
+					<h2 class="subtitle is-5">Registration does not include a Team Gaulrapp T-Shirt.  If you would like to order one, <a href="https://www.customink.com/g/rvv0-00aq-36yt" target="_blank">click here</a></h2>
+				</div>
+			</div>
+		</div>	
 	</div>
 </section>
 </section>
 <section class="section" id="register-section">
 	<div class="container">
-		<div class="body register">
-			<a name="register"></a>
-			<h1 class="title is-2 has-text-centered">Register</h1>
-			<h2 class="subtitle is-3 has-text-centered">100% of Registration Fees and Donations will go directly to the Gaulrapp Family!</h2>
-			<%= render 'form' %>
+		<div class="columns">
+			<div class="column is-10 is-offset-1">
+				<div class="body register">
+					<a name="register"></a>
+					<h1 class="title is-2 has-text-centered">Register</h1>
+					<h2 class="subtitle is-3 has-text-centered">100% of Registration Fees and Donations will go directly to the Gaulrapp Family!</h2>
+					<%= render 'form' %>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
-<footer class="footer">
+<section class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        <strong>Design</strong> by <a href="https://github.com/connordougherty">Connor Dougherty</a>
+        <%= link_to 'Credits', credits_path %>
       </p>
     </div>
   </div>
+</section>
+<footer>
+	<div class="container-fluid is-hidden-tablet">
+		<nav class="level" id="mobile-menu">
+			<p class="level-item has-text-right menu-img">
+				<span class="menu-title is-pulled-left">Menu</span>
+				<a id="milkbox">
+					<%= image_tag 'milk-carton-button.png', style: 'height: 100px' %>
+				</a>
+		  </p>
+		  <p class="level-item has-text-centered">
+		    <a href="#home-section" class="link is-info" id="home">Home</a>
+		  </p>
+		  <p class="level-item has-text-centered">
+		    <a href="#tim-section" class="link is-info" id="tim">About Tim</a>
+		  </p>
+		  <p class="level-item has-text-centered">
+		    <a href="#run-section" class="link is-info" id="run">About the Run</a>
+		  </p>
+		  <p class="level-item has-text-centered">
+		    <a href="#register-section" class="link is-info" id="register">Register</a>
+		  </p>
+		</nav>
+	</div>
 </footer>
 
 
