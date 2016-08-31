@@ -2,39 +2,40 @@
   <div class='container'>
     <p id="notice"><%= notice %></p>
 
+    <%= link_to 'All', registrations_path(sort: 'all'), class: 'button is-primary' %>
+    <%= link_to 'Runners', registrations_path(sort: 'runners'), class: 'button is-primary' %>
+    <%= link_to 'Volunteers', registrations_path(sort: 'volunteer'), class: 'button is-primary' %>
+    <%= link_to 'Complete', registrations_path(sort: 'paid'), class: 'button is-primary' %>
+    <%= link_to 'Incomplete', registrations_path(sort: 'unpaid'), class: 'button is-primary' %>
+
     <h1>Listing Registrations</h1>
 
     <table>
       <thead>
         <tr>
-          <td>id</td>
+          <th>id</th>
           <th>Name</th>
           <th>Level</th>
-          <th>Street</th>
-          <th>City</th>
-          <th>State</th>
-          <th>Zip</th>
+          <th>Address</th>
           <th>Phone</th>
+          <th>Volunteer</th>
           <th colspan="3"></th>
         </tr>
       </thead>
 
       <tbody>
-        <% @registrations.each do |registration| %>
-          <% registration.participants.each do |participant| %>
-            <tr>
-              <td><%= participant.id %></td>
-              <td><%= participant.name %></td>
-              <td><%= registration_levels.key(participant.level) %></td>
-              <td><%= registration.street %></td>
-              <td><%= registration.city %></td>
-              <td><%= registration.state %></td>
-              <td><%= registration.zip %></td>
-              <td><%= registration.phone %></td>
-              <td><%= link_to 'Show', registration %></td>
-              <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
-            </tr>
-          <% end %>
+        <% @participants.each do |participant| %>
+          <tr>
+            <td><%= participant.id %></td>
+            <td><%= participant.name %></td>
+            <td><%= registration_levels.key(participant.level) %></td>
+            <td><%= participant.registration.street %><br>
+            <%= participant.registration.city %> <%= participant.registration.state %> <%= participant.registration.zip %></td>
+            <td><%= participant.registration.phone %></td>
+            <td><%= participant.volunteer %></td>
+            <td><%= link_to 'Show', participant.registration, class: 'button is-primary is-small' %></td>
+            <td><%= link_to 'Edit', edit_registration_path(participant.registration), class: 'button is-primary is-small' %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>

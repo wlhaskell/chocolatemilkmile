@@ -35,7 +35,20 @@ class RegistrationsController < ApplicationController
   # GET /registrations
   # GET /registrations.json
   def index
-    @registrations = Registration.where(confirmation: true)
+    
+    case params[:sort]
+    when 'all'
+      @participants = Participant.all
+    when 'paid'
+      @participants = Participant.joins(:registration).where("registrations.confirmation = ?", true)
+    when 'volunteer'
+      @participants = Participant.where("volunteer = ?", 1)
+    when 'unpaid'
+      @participants = Participant.joins(:registration).where("registrations.confirmation = ?", false)
+    when 'runners'
+      @participants = Participant.where("level <> ?", 0)
+    end
+      @participants.order!(:name)
   end
 
   # GET /registrations/1
@@ -108,7 +121,7 @@ class RegistrationsController < ApplicationController
     end
 
     def validate_session
-      if session[:id] != @registration.id
+      if session[:id] != @registration.id || !session[:admin]
         redirect_to unauthorized_path
       end
     end
