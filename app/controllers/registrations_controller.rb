@@ -36,6 +36,8 @@ class RegistrationsController < ApplicationController
   # GET /registrations.json
   def index
     
+    params[:sort] ||= 'all'
+
     case params[:sort]
     when 'all'
       @participants = Participant.all
