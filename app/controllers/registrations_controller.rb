@@ -123,7 +123,7 @@ class RegistrationsController < ApplicationController
     end
 
     def validate_session
-      if session[:id] != @registration.id || !session[:admin]
+      if !(session[:id] == @registration.id || session[:admin])
         redirect_to unauthorized_path
       end
     end
