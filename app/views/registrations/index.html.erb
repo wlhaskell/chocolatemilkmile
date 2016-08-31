@@ -1,42 +1,43 @@
-<p id="notice"><%= notice %></p>
+<section class='section'>
+  <div class='container'>
+    <p id="notice"><%= notice %></p>
 
-<h1>Listing Registrations</h1>
+    <h1>Listing Registrations</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Level</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Phone</th>
-      <th>Paid</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @registrations.each do |registration| %>
-      <% registration.participants.each do |participant| %>
+    <table>
+      <thead>
         <tr>
-          <td><%= participant.name %></td>
-          <td><%= participant.level %></td>
-          <td><%= registration.street %></td>
-          <td><%= registration.city %></td>
-          <td><%= registration.state %></td>
-          <td><%= registration.zip %></td>
-          <td><%= registration.phone %></td>
-          <td><%= registration.confirmation %></td>
-          <td><%= link_to 'Show', registration %></td>
-          <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
+          <td>id</td>
+          <th>Name</th>
+          <th>Level</th>
+          <th>Street</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>Phone</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+        <% @registrations.each do |registration| %>
+          <% registration.participants.each do |participant| %>
+            <tr>
+              <td><%= participant.id %></td>
+              <td><%= participant.name %></td>
+              <td><%= registration_levels.key(participant.level) %></td>
+              <td><%= registration.street %></td>
+              <td><%= registration.city %></td>
+              <td><%= registration.state %></td>
+              <td><%= registration.zip %></td>
+              <td><%= registration.phone %></td>
+              <td><%= link_to 'Show', registration %></td>
+              <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Registration', new_registration_path %>
+  </div>
+</section>

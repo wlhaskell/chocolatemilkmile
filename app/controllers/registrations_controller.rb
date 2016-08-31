@@ -35,7 +35,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations
   # GET /registrations.json
   def index
-    @registrations = Registration.all
+    @registrations = Registration.where(confirmation: true)
   end
 
   # GET /registrations/1
