@@ -3,7 +3,7 @@ class AdminController < ApplicationController
   end
 
   def check
-  	if params[:password] == 'WillLarkinMorgan'
+  	if params[:password] == ENV['admin_pass']
   		session[:admin] = true
   		redirect_to registrations_path
   	else
